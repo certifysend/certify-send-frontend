@@ -36,83 +36,94 @@ const Footer = () => {
 
   return (
     <footer className="bg-white">
-      <div className="mx-auto py-12 md:px-8 flex flex-col md:flex-row gap-12">
-        <div className="md:w-1/3 bg-[#5570F1] rounded-lg p-8 text-white">
-          <h2 className="text-3xl font-semibold mb-4">
-            Stay Connected with Certifysend
-          </h2>
-          <p className="mb-6">
-            Simplify certification, streamline webinars, and save time with our cutting-edge platform.
-          </p>
-          <div className="flex justify-between items-end">
-            <a 
-              href="/get-started"
-              className="inline-flex items-center bg-white text-[#5570F1] px-4 py-2 space-x-2 rounded-lg font-medium hover:bg-opacity-90 transition-colors"
-            >
-              Get Started
-              <img src="/img/button-icon.png" alt="" className="w-5 h-5 ml-2" />
-            </a>
-            <img src="/img/Vector.png" alt="" className="w-20 h-20" />
+      <div className="p-5 md:p-10 mx-auto md:px-10">
+        <div className="grid md:grid-cols-12 gap-8">
+          <div className="md:col-span-4 md:w-[495px] h-[300px] bg-[#5570F1] rounded-lg p-6 text-white">
+            <h2 className="text-4xl font-normal leading-[48px] tracking-[-0.04em] text-left underline-offset-4 decoration-transparent  h-[96px]">
+              Stay Connected with Certifysend
+            </h2>
+            <p className="text-base font-normal leading-[23.2px] text-left decoration-transparent h-[69px]">
+              Simplify certification, streamline webinars, and save time with our cutting-edge platform.
+            </p>
+            <div className="flex justify-between items-end">
+              <button className="bg-white text-[#5570F1] px-4 py-4 rounded-lg text-sm flex justify-between items-center">
+                Get Started <span className="">
+                  <img src="/img/button-icon.png" alt="" className="h-5 w-5" />
+                </span>
+              </button>
+              <img src="/img/Vector.png" alt="" className="w-20 h-20" />
+            </div>
           </div>
-        </div>
 
-        <div className="md:w-2/3 flex flex-wrap justify-between">
-          <div className="grid grid-cols-3 gap-12 mb-8 md:mb-0">
-            {Object.values(footerLinks).map((section) => (
-              <div key={section.title}>
-                <h3 className="text-gray-900 font-medium mb-4">{section.title}</h3>
+          <div className="md:col-span-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
+             
+              <div className="">
+                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">{footerLinks.product.title}</h3>
                 <ul className="space-y-3">
-                  {section.links.map((link) => (
+                  {footerLinks.product.links.map((link) => (
                     <li key={link.name}>
-                      <a
-                        href={link.href}
-                        className="text-gray-600 hover:text-[#5570F1] transition-colors"
-                      >
+                      <a href={link.href} className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none">
                         {link.name}
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
-          
-          {/* Logo */}
-          <div className="">
-            <img src="/img/logo.png" alt="CertifySend Logo" className="w-auto h-8" />
+
+              <div>
+                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">{footerLinks.community.title}</h3>
+                <ul className="space-y-3">
+                  {footerLinks.community.links.map((link) => (
+                    <li key={link.name}>
+                      <a href={link.href} className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none">
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+             
+              <div>
+                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">{footerLinks.learn.title}</h3>
+                <ul className="space-y-3">
+                  {footerLinks.learn.links.map((link) => (
+                    <li key={link.name}>
+                      <a href={link.href} className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none">
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            
+              <div className="flex justify-start md:justify-end items-start">
+                <img src="/img/logo.png" alt="CertifySend Logo" className="h-8" />
+              </div>
+            </div>
+            <div className="mt-12 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0 ">
+              <div className="flex flex-wrap gap-2 items-center text-xs md:text-[14px]">
+                <a href="/privacy" className="text-[#3E3838] hover:text-[#5570F1] transition-colors h-[20px] gap-0 text-[14px] font-semibold leading-[20.3px] text-left">
+                  Privacy Policy
+                </a>
+                <span className="text-gray-300">•</span>
+                <a href="/terms" className="text-[#3E3838] hover:text-[#5570F1] transition-colors h-[20px] gap-0 text-[14px] font-semibold leading-[20.3px] text-left">
+                  Terms of Service
+                </a>
+                <span className="text-gray-300">•</span>
+                <a href="/help" className="text-[#3E3838] hover:text-[#5570F1] transition-colors h-[20px] gap-0 text-[14px] font-semibold leading-[20.3px] text-left ">
+                  Help Center
+                </a>
+              </div>
+              <div className="h-[23px] gap-0 text-[16px] font-normal leading-[23.2px] text-right decoration-skip-ink-auto text-[#514A4A]">
+              &copy;2025 Certifysend. All rights reserved.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/*<div className="">
-        <div className="container mx-auto px-4 md:px-8 lg:px-16 py-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="flex items-center space-x-6">
-            <a
-              href="/privacy"
-              className="text-gray-600 hover:text-[#5570F1] transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <span className="text-gray-300">•</span>
-            <a
-              href="/terms"
-              className="text-gray-600 hover:text-[#5570F1] transition-colors"
-            >
-              Terms of Service
-            </a>
-            <span className="text-gray-300">•</span>
-            <a
-              href="/help"
-              className="text-gray-600 hover:text-[#5570F1] transition-colors"
-            >
-              Help Center
-            </a>
-          </div>
-          <div className="text-gray-600">
-            © 2025 Certifysend. All rights reserved.
-          </div>
-        </div>
-      </div>*/}
     </footer>
   );
 };
