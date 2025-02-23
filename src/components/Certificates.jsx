@@ -3,19 +3,6 @@ import { X, Minus, Maximize2 } from "lucide-react";
 import EmailSchedule from './EmailSchedule';
 
 const EmailCompositionPane = ({ onBack, onClose }) => {
-  {/*const [setEmailData] = useState({
-    recipients: '',
-    subject: '',
-    bodyText: ''
-  });
-
-  {/* const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setEmailData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
-  };*/}
 
   const handleSubmit = (e) => {
     e.preventDefault();
