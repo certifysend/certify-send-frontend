@@ -18,7 +18,7 @@ const CTASection = () => {
           <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/signup"
-              className="flex items-center justify-center space-x-2 w-full sm:w-[200px] h-[56px] py-[14px] px-6 rounded-lg bg-[#FAFBFF] text-[#5570F1] text-lg font-semibold"
+              className="flex items-center justify-center space-x-2 w-full sm:w-[250px] h-[56px] py-[14px] px-6 rounded-lg bg-[#FAFBFF] text-[#5570F1] text-lg font-semibold"
             >
               Sign up - it's free!
               <img src="/img/button-icon.png" alt="" className="w-5 h-5 text-[#5570F1]" />
