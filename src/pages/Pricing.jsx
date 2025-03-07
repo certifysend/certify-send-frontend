@@ -1,3 +1,4 @@
+// src/pages/Pricing.js
 const PricingSection = () => {
   const plans = [
     {
@@ -34,7 +35,7 @@ const PricingSection = () => {
       buttonText: "Shop Now",
       isPopular: false,
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-white">
@@ -155,8 +156,7 @@ const PricingSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PricingSection
-
+export default PricingSection;

@@ -1,13 +1,11 @@
-import React from "react";
-
 const Footer = () => {
   const footerLinks = {
     product: {
       title: "Product",
       links: [
-        { name: "Features", href: "/features" },
-        { name: "Pricing", href: "/pricing" },
-        { name: "How It Works", href: "/how-it-works" },
+        { name: "Features", href: "/#features" },
+        { name: "Pricing", href: "/#pricing" },
+        { name: "How It Works", href: "/#how-it-works" },
         { name: "Free Trial", href: "/free-trial" },
         { name: "Case Studies", href: "/case-studies" },
       ],
@@ -25,14 +23,14 @@ const Footer = () => {
     learn: {
       title: "Learn",
       links: [
-        { name: "FAQ", href: "/faq" },
+        { name: "FAQ", href: "/#faq" },
         { name: "Blog", href: "/blog" },
         { name: "Documentation", href: "/docs" },
         { name: "eBooks/Resources", href: "/resources" },
         { name: "Onboarding Guide", href: "/onboarding" },
       ],
     },
-  };
+  }
 
   return (
     <footer className="bg-white">
@@ -47,7 +45,8 @@ const Footer = () => {
             </p>
             <div className="flex justify-between items-end">
               <button className="bg-white text-[#5570F1] px-4 py-4 rounded-lg text-sm flex justify-between items-center">
-                Get Started <span className="">
+                Get Started{" "}
+                <span className="">
                   <img src="/img/button-icon.png" alt="" className="h-5 w-5" />
                 </span>
               </button>
@@ -57,13 +56,17 @@ const Footer = () => {
 
           <div className="md:col-span-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
-             
               <div className="">
-                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">{footerLinks.product.title}</h3>
+                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">
+                  {footerLinks.product.title}
+                </h3>
                 <ul className="space-y-3">
                   {footerLinks.product.links.map((link) => (
                     <li key={link.name}>
-                      <a href={link.href} className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none">
+                      <a
+                        href={link.href}
+                        className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none"
+                      >
                         {link.name}
                       </a>
                     </li>
@@ -72,11 +75,16 @@ const Footer = () => {
               </div>
 
               <div>
-                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">{footerLinks.community.title}</h3>
+                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">
+                  {footerLinks.community.title}
+                </h3>
                 <ul className="space-y-3">
                   {footerLinks.community.links.map((link) => (
                     <li key={link.name}>
-                      <a href={link.href} className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none">
+                      <a
+                        href={link.href}
+                        className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none"
+                      >
                         {link.name}
                       </a>
                     </li>
@@ -84,13 +92,17 @@ const Footer = () => {
                 </ul>
               </div>
 
-             
               <div>
-                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">{footerLinks.learn.title}</h3>
+                <h3 className="mb-5 w-[99px] h-[20px] gap-0 text-[14px] font-medium leading-[20.3px] text-left decoration-skip-ink-none text-[#8D8484]">
+                  {footerLinks.learn.title}
+                </h3>
                 <ul className="space-y-3">
                   {footerLinks.learn.links.map((link) => (
                     <li key={link.name}>
-                      <a href={link.href} className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none">
+                      <a
+                        href={link.href}
+                        className="w-[118px] h-5 text-sm font-medium leading-[20.3px] text-[#3E3838] text-left decoration-skip-ink-none"
+                      >
                         {link.name}
                       </a>
                     </li>
@@ -98,34 +110,38 @@ const Footer = () => {
                 </ul>
               </div>
 
-            
               <div className="flex justify-start md:justify-end items-start">
                 <img src="/img/logo.png" alt="CertifySend Logo" className="h-8" />
               </div>
             </div>
-            <div className="mt-12 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0 ">
-              <div className="flex flex-wrap gap-2 items-center text-xs md:text-[14px]">
-                <a href="/privacy" className="text-[#3E3838] hover:text-[#5570F1] transition-colors h-[20px] gap-0 text-[14px] font-semibold leading-[20.3px] text-left">
+            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
+              <div className="flex flex-wrap gap-1 sm:gap-2 items-center text-[10px] xs:text-xs sm:text-[14px]">
+                <a href="/privacy" className="text-[#3E3838] hover:text-[#5570F1] transition-colors font-semibold">
                   Privacy Policy
                 </a>
                 <span className="text-gray-300">•</span>
-                <a href="/terms" className="text-[#3E3838] hover:text-[#5570F1] transition-colors h-[20px] gap-0 text-[14px] font-semibold leading-[20.3px] text-left">
+                <a href="/site-map" className="text-[#3E3838] hover:text-[#5570F1] transition-colors font-semibold">
+                  Site Map
+                </a>
+                <span className="text-gray-300">•</span>
+                <a href="/service-term" className="text-[#3E3838] hover:text-[#5570F1] transition-colors font-semibold">
                   Terms of Service
                 </a>
                 <span className="text-gray-300">•</span>
-                <a href="/help" className="text-[#3E3838] hover:text-[#5570F1] transition-colors h-[20px] gap-0 text-[14px] font-semibold leading-[20.3px] text-left ">
+                <a href="/help" className="text-[#3E3838] hover:text-[#5570F1] transition-colors font-semibold">
                   Help Center
                 </a>
               </div>
-              <div className="h-[23px] gap-0 text-[16px] font-normal leading-[23.2px] text-right decoration-skip-ink-auto text-[#514A4A]">
-              &copy;2025 Certifysend. All rights reserved.
+              <div className="text-xs sm:text-sm md:text-base font-normal text-[#514A4A]">
+                &copy;2025 Certifysend. All rights reserved.
               </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
+

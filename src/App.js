@@ -16,6 +16,16 @@ import ForgotPassword from "./components/auth/ForgotPassword";
 import PasswordReset from "./components/auth/PasswordReset";
 import PasswordResetSuccess from "./components/auth/PasswordResetSuccess";
 import DashboardPage from "./pages/DashboardPage";
+import PricingSection from "./pages/Pricing";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermOfService";
+import SiteMap from "./pages/Sitemap";
+import SuccessStories from "./pages/SuccessStories";
+import HelpCenter from "./pages/HelpCenter";
+import Blog from "./pages/Blog";
+import HowToAutomate from "./pages/HowtoAutomate";
+import OnboardingGuide from "./pages/OnboardingGuide";
+import Feature from "./pages/Feature";
 
 
 function App() {
@@ -41,6 +51,17 @@ function App() {
           <Route path="/password-reset-success" element={<PasswordResetSuccess />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/create-pass" element={<CreatePasswordInstitution />} />
+          <Route path="/pricing" element={<PricingSection />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="service-term" element={<TermsOfService />} />
+          <Route path="site-map" element={<SiteMap />} />
+          <Route path="success-stories" element={<SuccessStories />} />
+          <Route path="/help" element={<HelpCenter />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<HowToAutomate />} />
+          <Route path="/onboarding" element={<OnboardingGuide />} />
+          <Route path="/features" element={<Feature />} />
+          
         
         </Routes>
       

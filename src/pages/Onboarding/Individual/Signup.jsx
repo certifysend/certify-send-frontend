@@ -413,7 +413,7 @@ const InstitutionSignupForm = ({ setCurrentStep }) => {
             </button>
           </div>
           
-          </div>
+        </div>
 
         <p className="mt-6 text-sm text-[#8B8D97] text-center">
         Already have an account?{" "}
@@ -422,18 +422,18 @@ const InstitutionSignupForm = ({ setCurrentStep }) => {
         </Link>
         </p>
       
-     <div className="mt-8 flex items-center gap-6">
-     <Link href="/privacy" className="text-xs text-[#667085] hover:underline">
-       Privacy Policy
-     </Link>
-     <Link href="/terms" className="text-xs text-[#667085] hover:underline">
-       Terms of Service
-     </Link>
-     <Link href="/help" className="text-xs text-[#667085] hover:underline">
-       Help Center
-     </Link>
-   </div>
-   </form>
+        <div className="mt-8 flex items-center gap-6">
+          <Link href="/privacy" className="text-xs text-[#667085] hover:underline">
+          Privacy Policy
+          </Link>
+          <Link href="/terms" className="text-xs text-[#667085] hover:underline">
+          Terms of Service
+          </Link>
+          <Link href="/help" className="text-xs text-[#667085] hover:underline">
+          Help Center
+          </Link>
+        </div>
+    </form>
    
   );
 };

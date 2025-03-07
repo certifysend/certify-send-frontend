@@ -127,7 +127,6 @@ const CreatePassword = () => {
 
          
         </div>
-         {/* Footer Links */}
          <div className="mt-56 flex items-center gap-6">
             <Link href="/privacy" className="text-xs text-[#667085] hover:underline">
               Privacy Policy
