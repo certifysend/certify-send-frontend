@@ -30,7 +30,7 @@ const HowItWorks = () => {
             <h3 className="text-[16px] font-semibold leading-[23.2px] text-left text-[#5570F1] w-[568px] h-[28px]">
               How it works
             </h3>
-            <h2 className="text-[36px] font-normal leading-[43.2px] tracking-[-0.04em] text-left text-[#344054] w-[568px] h-[86px]">
+            <h2 className="text-base md:text-[36px] font-normal leading-[43.2px] tracking-[-0.04em] text-left text-[#344054] w-[568px] h-[86px]">
               A Simple, Streamlined Process to Generate and Deliver Certificates
             </h2>
             <p className="text-[18px] font-normal leading-[26.1px] text-left text-[#53545C] w-[568px] h-[78px] mt-3">
