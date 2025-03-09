@@ -16,7 +16,7 @@ const RecipientListPane = ({ onBack, onNext }) => {
   return (
     <div className="container mx-auto p-4 mt-10">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-lg font-medium">Recipient List</h1>
+        <h1 className="text-lg font-medium">Recipient Lis</h1>
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-600">Save as draft</span>
           <div className="w-12 h-6 bg-gray-200 rounded-full p-1 cursor-pointer">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Filter, ArrowUpRight, ChevronLeft } from "lucide-react";
+import { Search,ChevronLeft } from 'lucide-react';
 import EmailCompositionPane from "./EmailCompositionPane";
 import FormBuilder from "./FormBuilder";
 
@@ -21,7 +21,6 @@ const SentEmail = ({ onNavigate }) => {
       return () => clearTimeout(timer);
     }
   }, [view, projectsLoaded]);
-
 
   const handleProjectSelection = (project) => {
     setSelectedProject(project);
@@ -152,25 +151,25 @@ const SentEmail = ({ onNavigate }) => {
     switch (view) {
       case "empty":
         return (
-          <div className="flex flex-col items-center justify-center mt-20 bg-[#F9FAFB] max-w-lg mx-auto p-10">
-            <img src="/img/elements.png" alt="element" className="mb-6" />
-            <h2 className="text-center mb-2 font-medium">No Recipients Added Yet?</h2>
-            <p className="text-center mb-6 text-gray-500 text-sm">
-              Upload a list, select from existing recipients, or collect via registration forms to get started!
+          <div className="flex flex-col items-center justify-center mt-8 sm:mt-20 bg-[#F9FAFB] max-w-lg mx-auto p-4 sm:p-5 rounded-lg">
+            <img src="/img/iconContainer5.png" alt="element" className="mb-4 sm:mb-6 w-16 sm:w-auto" />
+            <h2 className="text-center mb-2 font-medium text-sm sm:text-base">No Projects Created Yet</h2>
+            <p className="text-center mb-4 sm:mb-6 text-gray-500 text-xs sm:text-sm">
+              It looks like you haven't created any projects yet. Start by creating a new project to manage your certificates and forms
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <button
                 onClick={handleCertificateSelection}
-                className="bg-[#5570F1] text-white px-4 py-2 rounded-lg hover:bg-[#4058c7] transition flex items-center justify-center gap-2"
+                className="bg-[#5570F1] text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-[#4058c7] transition flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm w-full sm:w-auto"
               >
-                <img src="/img/button-icon-gen.png" alt="" className="w-4 h-4" />
+                <img src="/img/button-icon-gen.png" alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
                 Generate Certificate
               </button>
               <button
                 onClick={handleCreateForm}
-                className="bg-white text-[#5570F1] px-4 py-2 rounded-lg border border-[#5570F1] hover:bg-[#5570F1]/10 transition flex items-center justify-center gap-2"
+                className="bg-white text-[#5570F1] px-3 sm:px-4 py-2 rounded-lg border border-[#5570F1] hover:bg-[#5570F1]/10 transition flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm w-full sm:w-auto"
               >
-                <img src="/img/file-colored.png" alt="" className="w-4 h-4" />
+                <img src="/img/file-colored.png" alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
                 Create New Form
               </button>
             </div>
@@ -204,10 +203,7 @@ const SentEmail = ({ onNavigate }) => {
                         <span className="font-medium text-gray-800">{project.title}</span>
                       </td>
                       <td className="py-4 text-gray-500 text-sm w-2/3">{truncateText(project.title)}</td>
-                      <td className="py-4 text-gray-500 text-xs">
-                        <span className="text-green-600 font-medium">{project.deliveredCount}</span>/{project.sentCount}{" "}
-                        delivered
-                      </td>
+                      
                       <td className="py-4 pr-4 text-right text-gray-500 text-xs">{project.timestamp}</td>
                       <td className="py-4 pr-4 text-right">
                         <button
@@ -217,8 +213,9 @@ const SentEmail = ({ onNavigate }) => {
                             console.log("Delete project", project.id);
                           }}
                         >
-                          🗑️
+                           <img src="/img/del.png" alt="" className="w-5 h-5 bg-black" />
                         </button>
+                       
                       </td>
                     </tr>
                   ))}
@@ -328,7 +325,7 @@ const SentEmail = ({ onNavigate }) => {
   }
 
   return (
-    <div className="container mx-auto bg-white p-6">
+    <div className="container mx-auto bg-white md:p-6 py-8 md:py-12">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-lg font-medium text-gray-900">
           {view === "detail" || (view === "message" && selectedProject) ? selectedProject?.title : "Sent"}
@@ -338,8 +335,10 @@ const SentEmail = ({ onNavigate }) => {
           onClick={toggleEmailPane}
         >
           Send Bulk Email
-          <ArrowUpRight className="w-4 h-4" />
+          <img src="/img/arrow-forward.png" alt="" className="" />
         </button>
+
+        
       </div>
 
       {(view === "list" || view === "detail") && (
@@ -352,8 +351,8 @@ const SentEmail = ({ onNavigate }) => {
             />
             <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
           </div>
-          <button className="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-sm">
-            <Filter className="w-4 h-4" />
+          <button className="flex items-center gap-1 px-4 py-2 text-sm">
+            <img src="/img/filter-alt.png" alt="" className="" />
             Filter
           </button>
         </div>

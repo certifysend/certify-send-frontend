@@ -2,14 +2,13 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
-import { ProgressContext } from "../../../context/ProgressContext";
 
 const CreatePassword = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-   const { currentStep, setCurrentStep, totalSteps } = useContext(ProgressContext); 
+   
 
   const requirements = [
     { text: "8 characters minimum", met: password.length >= 8 },
@@ -34,9 +33,7 @@ const CreatePassword = () => {
                 Secure your account with a strong and unique password.
               </p>
             </div>
-            <div className="w-12 h-12 rounded-full border-4 border-[#5570F1] flex items-center justify-center text-[#5570F1] font-semibold">
-              {currentStep}/{totalSteps}
-            </div>
+            
           </div>
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-4">
@@ -111,7 +108,7 @@ const CreatePassword = () => {
               </ul>
             </div>
 
-            <button onClick={() => setCurrentStep(3)}
+            <button 
               type="submit"
               className="w-full bg-[#5570F1] text-white mt-6 px-[18px] py-2.5 rounded-lg font-semibold text-[14px] hover:bg-[#5570F1]/90 transition-colors"
             >

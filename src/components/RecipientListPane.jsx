@@ -16,9 +16,9 @@ const RecipientListPane = ({ onBack }) => {
 
   return (
     <div className="container mx-auto md:p-4">
-      <div className="md:py-12 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-        <h1 className="text-lg font-medium mb-2 sm:mb-0">Recipient List</h1>
-        <div className="flex items-center gap-2">
+      <div className="flex sm:flex-row justify-between items-center mb-4 md:py-12 py-6 sm:items-center">
+        <h1 className="text-sm md:text-lg font-medium mb-2 sm:mb-0">Recipient List</h1>
+        <div className="flex items-center gap-2 px-6">
           <span className="text-sm text-gray-600">Save as draft</span>
           <div className="w-12 h-6 bg-gray-200 rounded-full p-1 cursor-pointer">
             <div className="w-4 h-4 bg-white rounded-full"></div>
@@ -26,37 +26,38 @@ const RecipientListPane = ({ onBack }) => {
         </div>
       </div>
 
-      <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 md:gap-3 mb-6">
+      <div className="">
+        
+        <div className="flex items-center justify-end sm:justify-end sm:col-span-1 lg:col-span-2 gap-3 pr-6">
         <div className="relative sm:col-span-1">
           <input
             type="text"
             placeholder="Search..."
-            className="md:w-full w-40 pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-blue-300"
+            className="md:w-full w-40 pl-6 pr-4 py-2"
           />
           <img
             src="/img/search.png"
             alt="Search"
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4"
+            className="absolute left-1 top-1/2 transform -translate-y-1/2 w-4 h-4"
           />
         </div>
-        <div className="flex items-center justify-between sm:justify-end sm:col-span-1 lg:col-span-2 gap-3">
           <button className="text-gray-600 hover:text-gray-900 flex items-center gap-2">
             <img src="/img/filter-alt.png" alt="Filter" className="h-5 w-5" />
             <span>Filter</span>
           </button>
           <button
-            className="border border-[#5570F1] text-[#5570F1] px-4 py-2 rounded flex items-center gap-2"
+            className="md:border border-[#5570F1] text-[#5570F1] md:px-4 py-2 text-xs md:text-base rounded flex items-center md:gap-2"
             onClick={handleUploadDetails}
           >
-            <img src="/img/button-icon-upload.png" alt="" className="w-4 h-4" />
+            <img src="/img/button-icon-upload.png" alt="" className="w-4 h-4 hidden md:flex" />
             Upload Details
           </button>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow mb-6 w-screen">
+      <div className="bg-white rounded-lg shadow mb-6 w-screen md:w-full">
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
+          <table className="min-w-full divide-y divide-gray-200 px-10 overflow-hidden">
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">S/N</th>

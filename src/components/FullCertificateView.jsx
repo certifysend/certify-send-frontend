@@ -27,14 +27,14 @@ const FullCertificateView = ({ file, onBack, onNext }) => {
         <div className="absolute bottom-4 right-4 flex gap-2">
           <button
             onClick={onBack}
-            className="border border-[#5570F1] text-gray-600 px-4 py-2 rounded flex items-center gap-2 hover:bg-gray-50"
+            className="border border-[#5570F1] text-gray-600 px-4 py-2 text-sm md:text-base rounded flex items-center gap-2 hover:bg-gray-50"
           >
             <img src="/img/upload.png" alt="" className="w-4 h-4" />
             Re-upload
           </button>
           <button
             onClick={onNext}
-            className="bg-[#5570F1] text-white px-4 py-2 rounded flex items-center gap-2 hover:bg-[#4056b5]"
+            className="bg-[#5570F1] text-white px-4 py-2 rounded flex text-sm md:text-base items-center gap-2 hover:bg-[#4056b5]"
           >
             Next step
             <img src="/img/arrow-forward.png" alt="" className="w-4 h-4" />

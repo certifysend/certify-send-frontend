@@ -47,9 +47,9 @@ const UploadCertificatePane = () => {
   return (
     <div className="container mx-auto p-4 mt-4 sm:mt-10">
       <div className="flex sm:flex-row justify-between items-center mb-4 gap-2">
-        <h1 className="text-lg font-medium">Upload Certificate</h1>
+        <h1 className="text-sm md:text-lg font-medium">Upload Certificate</h1>
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600">Save as draft</span>
+          <span className="text-xs md:text-sm text-gray-600">Save as draft</span>
           <div className="w-12 h-6 bg-gray-200 rounded-full p-1 cursor-pointer">
             <div className="w-4 h-4 bg-white rounded-full"></div>
           </div>

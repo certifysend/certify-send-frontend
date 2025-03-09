@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Search, Star, Upload, Grid, List, Clock, ArrowLeft, ChevronDown } from "lucide-react"
+import { Search, Star, Upload,Clock, ArrowLeft, ChevronDown } from "lucide-react"
 import EmailCompositionPane from "./EmailCompositionPane"
 import RecipientList from "./RecipientList"
 import FormBuilder from "./FormBuilder"
@@ -154,7 +154,7 @@ const BulkEmail = () => {
 
   const renderEmptyState = () => (
     <div className="flex flex-col items-center justify-center mt-8 sm:mt-20 bg-[#F9FAFB] max-w-lg mx-auto p-4 sm:p-10 rounded-lg">
-      <img src="/img/elements.png" alt="element" className="mb-4 sm:mb-6 w-16 sm:w-auto" />
+      <img src="/img/iconContainer8.png" alt="element" className="mb-4 sm:mb-6 w-4 sm:w-20" />
       <h2 className="text-center mb-2 font-medium text-sm sm:text-base">No Recipients Added Yet?</h2>
       <p className="text-center mb-4 sm:mb-6 text-gray-500 text-xs sm:text-sm">
         Upload a list, select from existing recipients, or collect via registration forms to get started!
@@ -187,137 +187,140 @@ const BulkEmail = () => {
     />
   )
 
-  const renderCertificatesGrid = () => (
-    <div>
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3 sm:gap-4">
-        <div className="w-full sm:w-64 relative">
-          <input
-            type="text"
-            placeholder="Search here..."
-            className="w-full pl-8 sm:pl-10 pr-2 sm:pr-4 py-1.5 sm:py-2 border border-gray-200 rounded-lg text-xs sm:text-sm"
-          />
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" />
-        </div>
-        <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
-          <div className="flex items-center">
-            <button
-              onClick={() => setSortBy("date")}
-              className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs ${sortBy === "date" ? "text-gray-900" : "text-gray-500"}`}
-            >
-              Date
-              <ChevronDown className="inline ml-0.5 sm:ml-1 w-2.5 h-2.5 sm:w-3 sm:h-3" />
-            </button>
-            <button
-              onClick={() => setSortBy("viewed")}
-              className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs ${sortBy === "viewed" ? "text-gray-900" : "text-gray-500"}`}
-            >
-              Last viewed
-              <ChevronDown className="inline ml-0.5 sm:ml-1 w-2.5 h-2.5 sm:w-3 sm:h-3" />
-            </button>
+  const renderCertificatesGrid = () => {
+    const data = activeTab === "By Certificates" ? certificates : activeTab === "By Forms" ? forms : uploads;
+  
+    return (
+      <div>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3 sm:gap-4">
+          <div className="w-full sm:w-64 relative">
+            <input
+              type="text"
+              placeholder="Search here..."
+              className="w-full pl-8 sm:pl-10 pr-2 sm:pr-4 py-1.5 sm:py-2 border border-gray-200 rounded-lg text-xs sm:text-sm"
+            />
+            <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" />
           </div>
-          <div className="flex border border-gray-200 rounded-lg overflow-hidden">
-            <button
-              onClick={() => setViewMode("grid")}
-              className={`p-1 sm:p-1.5 ${viewMode === "grid" ? "bg-gray-100" : "bg-white"}`}
-            >
-              <Grid className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-500" />
-            </button>
-            <button
-              onClick={() => setViewMode("list")}
-              className={`p-1 sm:p-1.5 ${viewMode === "list" ? "bg-gray-100" : "bg-white"}`}
-            >
-              <List className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-500" />
-            </button>
+          <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
+            <div className="flex items-center">
+              <button
+                onClick={() => setSortBy("date")}
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs ${sortBy === "date" ? "text-gray-900" : "text-gray-500"}`}
+              >
+                Date
+                <ChevronDown className="inline ml-0.5 sm:ml-1 w-2.5 h-2.5 sm:w-3 sm:h-3" />
+              </button>
+              <button
+                onClick={() => setSortBy("viewed")}
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs ${sortBy === "viewed" ? "text-gray-900" : "text-gray-500"}`}
+              >
+                Last viewed
+                <ChevronDown className="inline ml-0.5 sm:ml-1 w-2.5 h-2.5 sm:w-3 sm:h-3" />
+              </button>
+            </div>
+            <div className="flex">
+              <button
+                onClick={() => setViewMode("grid")}
+                className={`p-1 sm:p-1.5 ${viewMode === "grid" ? "bg-gray-100" : "bg-white"}`}
+              >
+               <img src="/img/menu-icon.png" alt="" className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
+              <button
+                onClick={() => setViewMode("list")}
+                className={`p-1 sm:p-1.5 ${viewMode === "list" ? "bg-gray-100" : "bg-white"}`}
+              >
+                <img src="/img/menu2-con.png" alt="" className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
-        {activeTab === "By Certificates" &&
-          certificates.map((certificate) => (
-            <div
-              key={certificate.id}
-              className="border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition"
-              onClick={() => handleCertificateClick(certificate.id)}
-            >
-              <div className="relative h-32 sm:h-40 bg-gray-100">
-                <img
-                  src={certificate.image || "/placeholder.svg"}
-                  alt={certificate.name}
-                  className="w-full h-full object-cover"
-                />
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    handleToggleStar(certificate.id, "certificate")
-                  }}
-                  className="absolute top-2 right-2 p-1"
-                >
-                  <Star
-                    className={`w-4 h-4 sm:w-5 sm:h-5 ${certificate.starred ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
+  
+        {viewMode === "grid" ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+            {data.map((item) => (
+              <div
+                key={item.id}
+                className="border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition"
+                onClick={() => {
+                  if (activeTab === "By Certificates") {
+                    handleCertificateClick(item.id);
+                  } else if (activeTab === "By Forms") {
+                    handleFormClick(item.id);
+                  }
+                }}
+              >
+                <div className="relative h-32 sm:h-40 bg-gray-100">
+                  <img
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
                   />
-                </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleToggleStar(item.id, activeTab === "By Certificates" ? "certificate" : "form");
+                    }}
+                    className="absolute top-2 right-2 p-1"
+                  >
+                    <Star
+                      className={`w-4 h-4 sm:w-5 sm:h-5 ${item.starred ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
+                    />
+                  </button>
+                </div>
+                <div className="p-2 sm:p-3">
+                  <h3 className="text-xs sm:text-sm font-medium text-gray-900 truncate">{item.name}</h3>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 flex items-center">
+                    <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" /> Edited {item.editedTime}
+                  </p>
+                </div>
               </div>
-              <div className="p-2 sm:p-3">
-                <h3 className="text-xs sm:text-sm font-medium text-gray-900 truncate">{certificate.name}</h3>
-                <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 flex items-center">
-                  <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" /> Edited {certificate.editedTime}
-                </p>
-              </div>
-            </div>
-          ))}
-
-        {activeTab === "By Forms" &&
-          forms.map((form) => (
-            <div
-              key={form.id}
-              className="border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition"
-              onClick={() => handleFormClick(form.id)}
-            >
-              <div className="relative h-32 sm:h-40 bg-gray-100">
-                <img src={form.image || "/placeholder.svg"} alt={form.name} className="w-full h-full object-cover" />
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    handleToggleStar(form.id, "form")
-                  }}
-                  className="absolute top-2 right-2 p-1"
-                >
-                  <Star
-                    className={`w-4 h-4 sm:w-5 sm:h-5 ${form.starred ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-3 sm:space-y-4">
+            {data.map((item) => (
+              <div
+                key={item.id}
+                className="border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition flex items-center"
+                onClick={() => {
+                  if (activeTab === "By Certificates") {
+                    handleCertificateClick(item.id);
+                  } else if (activeTab === "By Forms") {
+                    handleFormClick(item.id);
+                  }
+                }}
+              >
+                <div className="relative w-24 sm:w-32 h-24 sm:h-32 bg-gray-100 flex-shrink-0">
+                  <img
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
                   />
-                </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleToggleStar(item.id, activeTab === "By Certificates" ? "certificate" : "form");
+                    }}
+                    className="absolute top-2 right-2 p-1"
+                  >
+                    <Star
+                      className={`w-4 h-4 sm:w-5 sm:h-5 ${item.starred ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
+                    />
+                  </button>
+                </div>
+                <div className="p-2 sm:p-3 flex-grow">
+                  <h3 className="text-xs sm:text-sm font-medium text-gray-900 truncate">{item.name}</h3>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 flex items-center">
+                    <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" /> Edited {item.editedTime}
+                  </p>
+                </div>
               </div>
-              <div className="p-2 sm:p-3">
-                <h3 className="text-xs sm:text-sm font-medium text-gray-900 truncate">{form.name}</h3>
-                <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 flex items-center">
-                  <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" /> Edited {form.editedTime}
-                </p>
-              </div>
-            </div>
-          ))}
-
-        {activeTab === "By Upload" &&
-          uploads.map((upload) => (
-            <div key={upload.id} className="border border-gray-200 rounded-lg overflow-hidden">
-              <div className="relative h-32 sm:h-40 bg-gray-100 flex items-center justify-center">
-                <img
-                  src={`/img/${upload.type}.png`}
-                  alt={upload.type}
-                  className="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-lg"
-                />
-              </div>
-              <div className="p-2 sm:p-3">
-                <h3 className="text-xs sm:text-sm font-medium text-gray-900 truncate">{upload.name}</h3>
-                <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 flex items-center">
-                  <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" /> Edited {upload.editedTime}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        )}
       </div>
-    </div>
-  )
+    );
+  };
 
   const renderContent = () => {
     if (showEmptyState) {
@@ -350,8 +353,8 @@ const BulkEmail = () => {
   }
 
   return (
-    <div className="container mx-auto bg-white p-3 md:p-6 max-w-7xl overflow-hidden py-6">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center -mx-2 mb-4 sm:mb-6 gap-3 sm:gap-0">
+    <div className="container mx-auto bg-white p-3 md:p-6 overflow-hidden py-12">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center -mx-2 mb-4 sm:mb-6 gap-3 sm:gap-0 py-10">
         <div className="flex items-center gap-1 sm:gap-2">
           {showBackButton && (
             <button onClick={handleBackClick} className="p-1 rounded-full hover:bg-gray-100">
@@ -376,7 +379,7 @@ const BulkEmail = () => {
               className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm bg-[#5570F1] text-white whitespace-nowrap"
             >
               Send Bulk Email
-              <span className="text-[10px] sm:text-xs">→</span>
+              <img src="/img/arrow-forward.png" alt="" className="" />
             </button>
           )}
         </div>
@@ -391,7 +394,7 @@ const BulkEmail = () => {
               className={`px-1 py-2 sm:py-3 text-xs sm:text-sm font-medium whitespace-nowrap ${
                 activeTab === tab ? "text-[#5570F1] border-b-2 border-[#5570F1]" : "text-gray-500"
               }`}
-            >
+            ><img src="/img/arrow-forward.png" alt="" className="" />
               {tab}
             </button>
           ))}

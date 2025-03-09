@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FileText } from 'lucide-react';
 import FormBuilder from './FormBuilder';
 
 const Form = () => {
@@ -20,21 +19,21 @@ const Form = () => {
 
   return (
     <div className="container mx-auto min-h-screen bg-gray-50 p-4 sm:p-6">
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 py-3 md:py-0">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 py-3 md:py-8">
         <h1 className="md:text-xl font-medium text-left">Start From Scratch or Use Template</h1>
         <button
           className="bg-[#5570F1] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-2"
           onClick={openModal}
         >
           View all Template
-          <span className="text-xs">→</span>
+          <img src="/img/arrow-forward.png" alt="" className="" />
         </button>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12 bg-[#F2F4FF] p-4 rounded-lg">
         <div className="cursor-pointer" onClick={() => setShowFormBuilder(true)}>
           <div className="bg-[#DBDEEE] rounded-lg p-4 flex flex-col items-center justify-center aspect-square shadow-sm">
-            <div className="text-gray-400 text-4xl mb-2">+</div>
+            <img src="/img/plus.png" alt="" className="w-20 h-20" />
           </div>
           <span className="text-sm text-gray-600">Blank Form</span>
         </div>
@@ -63,8 +62,8 @@ const Form = () => {
 
       <div className="bg-white rounded-lg p-4 sm:p-16">
         <div className="mt-8 sm:mt-32 bg-[#F9FAFB] max-w-md mx-auto py-8 sm:py-12 px-4 sm:px-2 rounded-lg flex flex-col items-center justify-center">
-          <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-            <FileText className="w-6 h-6 text-gray-400" />
+          <div className="flex items-center justify-center mb-4">
+            <img src="/img/iconContainer3.png" alt="" className="mb-4 sm:mb-6 w-4 sm:w-20" />
           </div>
           <h3 className="text-lg text-gray-900 font-medium mb-1">No form submissions yet!</h3>
           <p className="text-sm text-gray-500 mb-4 text-center">
@@ -75,7 +74,7 @@ const Form = () => {
             onClick={() => setShowFormBuilder(true)}
           >
             Create a New Form
-            <span className="text-xs">→</span>
+            <img src="/img/arrow.png" alt="" className="" />
           </button>
         </div>
       </div>
