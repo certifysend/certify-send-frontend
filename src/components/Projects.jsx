@@ -81,14 +81,14 @@ Best regards,
                 key={tab}
                 className={`py-2 sm:py-4 px-1 whitespace-nowrap relative text-sm sm:text-base ${
                   activeTab === tab 
-                    ? 'text-blue-600 font-medium' 
+                    ? 'text-[#5570F1] font-medium' 
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
                 onClick={() => setActiveTab(tab)}
               >
                 {tab}
                 {activeTab === tab && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600" />
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#5570F1]" />
                 )}
               </button>
             ))}
@@ -96,7 +96,7 @@ Best regards,
         </div>
       </div>
 
-      <div className="flex-1 overflow-hidden w-screen">
+      <div className="z-10">
         {activeTab === 'Preview certificate' ? (
           <PreviewCertificate />
         ) : activeTab === 'Recipient List' ? (
@@ -436,7 +436,7 @@ const Projects = ({ setActivePage }) => {
 
   const renderMainView = () => (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-2 py-5 md:py-6 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-6 sm:mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 py-5 md:py-0 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-6 sm:mb-8">
         {quickActions.map((action, index) => (
           <div 
             key={index} 
@@ -467,7 +467,7 @@ const Projects = ({ setActivePage }) => {
       
       {showEmptyState ? (
         <div className="flex flex-col items-center justify-center mt-8 sm:mt-20 bg-[#F9FAFB] max-w-lg mx-auto p-4 sm:p-5 rounded-lg">
-        <img src="/img/iconContainer6.png" alt="element" className="mb-4 sm:mb-6 w-16 sm:w-20" />
+        <img src="/img/iconContainer6.png" alt="element" className="mb-4 sm:mb-6 w-16 sm:w-auto" />
         <h2 className="text-center mb-2 font-medium text-sm sm:text-base">No Projects Created Yet</h2>
         <p className="text-center mb-4 sm:mb-6 text-gray-500 text-xs sm:text-sm">
         It looks like you haven't created any projects yet. Start by creating a new project to manage your certificates and forms

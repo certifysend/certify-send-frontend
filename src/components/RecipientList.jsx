@@ -42,13 +42,13 @@ const RecipientList = () => {
           />
           <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
         </div>
-        <button className="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-sm">
-          <Filter className="w-4 h-4" />
-          Filter
-        </button>
+        <button className="flex items-center gap-1 px-4 py-2 text-sm">
+            <img src="/img/filter-alt.png" alt="" className="" />
+            Filter
+          </button>
       </div>
 
-      <div className="w-full overflow-hidden">
+      <div className="w-screen md:w-full overflow-hidden ">
   <div className="overflow-x-auto max-w-full rounded-lg border border-gray-200">
     <table className="w-full min-w-max divide-y divide-gray-200">
       <thead className="bg-gray-50">
